@@ -8,24 +8,86 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <h1>Hello, world!</h1>
     <div class="container">
-        <div class="formInput">
-            <form id="myForm" onsubmit="getPrimeNumbers()">
-                <div class="mb-3">
-                  <label for="firstNumber" class="form-label">Enter 1st Number</label>
-                  <input type="number" class="form-control" name="firstNumber" id="firstNumber" min="0" required>
+      <div class="formInput">
+        <form id="myForm" onsubmit="getPrimeNumbers()">
+            <div class="mb-3">
+              <label for="firstNumber" class="form-label">Enter 1st Number</label>
+              <input type="number" class="form-control" name="firstNumber" id="firstNumber" min="0" required>
+            </div>
+            <div class="mb-3">
+              <label for="secondNumber" class="form-label">Enter 2nd Number</label>
+              <input type="number" class="form-control" name="secondNumber" id="secondNumber" min="0" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div class="result">
+          <!-- Button trigger modal -->
+          <div class="details_modal">
+            <button  hidden="true" id="details" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Details
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Prime Number Details</h1>
+                  </div>
+                  <div class="modal-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">2B</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">2C</button>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th>Number</th>
+                              <th>Type</th>
+                              <th>Time (in ms)</th>
+                            </tr>
+                          </thead>
+                          <tbody id="2b-table">
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th>Number</th>
+                              <th>Time (in ms)</th>
+                            </tr>
+                          </thead>
+                          <tbody id="2c-table">
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
                 </div>
-                <div class="mb-3">
-                  <label for="secondNumber" class="form-label">Enter 2nd Number</label>
-                  <input type="number" class="form-control" name="secondNumber" id="secondNumber" min="0" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-        <p id="time_all_instances"></p>
-        <p id="prime_array"></p>
+              </div>
+            </div>
+          </div>
+
+          <p id="time_all_instances"></p>
+          <p id="avg_2b"></p>
+          <p id="avg_2c"></p>
+        </div>        
+      </div> 
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     <script src="index.js"></script>

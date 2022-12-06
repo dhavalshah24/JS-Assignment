@@ -1,9 +1,10 @@
-h1 {
-    color: red;
-}
 .formInput {
     width: 40%;
     margin: 30px auto;
     padding: 30px;
     border: 1px solid rgba(59, 28, 28, 0.199);
+}
+
+#details {
+    margin: 30px 0;
 }
